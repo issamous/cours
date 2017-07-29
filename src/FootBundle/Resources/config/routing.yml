@@ -1,0 +1,18 @@
+foot_homepage:
+    path:     /
+    defaults: { _controller: FootBundle:Default:index }
+foot_list_news:
+    path:     /news/list
+    defaults: { _controller: FootBundle:News:newsList }
+foot_add_news:
+    path:     /news/add
+    defaults: { _controller: FootBundle:News:newsAdd }
+foot_edit_news:
+    path:     /news/edit/{id}
+    defaults: { _controller: FootBundle:News:newsEdit }
+
+get_news_by_id_json:
+    path:     /news/get/{id}
+    defaults: { _controller: FootBundle:News:getById }
+    options:
+        expose: true

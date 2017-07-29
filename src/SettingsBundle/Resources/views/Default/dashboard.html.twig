@@ -1,0 +1,19 @@
+{% extends "::base2.html.twig" %}
+{% block titleContaint %}
+    <h2>Dashboard</h2>
+{% endblock %}
+   {% block breadcrumb %}
+   {% endblock %}
+{% block DashboardsActive %}class="active"{% endblock %}
+
+{% block Containt %}
+    {% for flashMessage in app.session.flashbag.get('reset') %}
+        <div class="alert alert-success">
+            {{ flashMessage }}
+        </div>
+
+
+    {% endfor %}
+    {{ isam(5) }}
+    Coming soon
+{% endblock %}

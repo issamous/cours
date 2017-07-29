@@ -1,0 +1,125 @@
+{% extends "::base2.html.twig" %}
+{% block stylesheets %}
+    <link href="{{ asset('src/css/summernote/summernote.css') }}" rel="stylesheet">
+    <link href="{{ asset('src/css/summernote/summernote-bs3.css') }}" rel="stylesheet">
+    <link href="{{ asset('src/css/datapicker/datepicker3.css') }}" rel="stylesheet">
+
+{% endblock %}
+
+ {% block actionArea %}
+     <a href="{{ path('foot_list_news') }}" class="btn btn-primary"><i class="fa fa-list-ul"></i> News list</a>
+ {% endblock %}
+{% block titleContaint %}
+    <h2>Add news</h2>
+{% endblock %}
+
+{% block breadcrumb %}
+    <ol class="breadcrumb">
+        <li>
+            <a>News</a>
+        </li>
+        <li class="active">
+            <strong>Add news</strong>
+        </li>
+    </ol>
+{% endblock %}
+{% block newActive %}class="active"{% endblock %}
+{% block NewsAddctive %}class="active"{% endblock %}
+{% block Containt %}
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="ibox">
+                <div class="ibox-title">
+                    <h5>news</h5>
+                </div>
+                <div class="ibox-content">
+
+                    <form method="post" action="{{ path('foot_add_news') }}" enctype="multipart/form-data">
+                        {{ form_row(form._token) }}
+                        {% if not form.vars.valid %}
+                            <div class="alert alert-danger">
+                                {{ form_errors(form) }}
+                            </div>
+                        {% endif %}
+                        {% if app.session.flashBag.has('success') %}
+                            {% for flashMessage in app.session.flashbag.get('success') %}
+                                <div class="alert alert-success">
+                                    {{ flashMessage }}
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Category </label>
+                            {{ form_widget(form.category_id) }}
+                        </div>
+                        <div class="form-group">
+                            <label>Title</label>
+                            {{ form_widget(form.news_title) }}
+                        </div>
+                        <div class="form-group">
+                            <label>Content</label>
+                            {{ form_widget(form.news_content) }}
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Image </label>
+                            {{ form_widget(form.news_image_file) }}
+                        </div>
+
+                        <div class="form-group" id="data_1">
+                            <label for="font-normal">news_date </label>
+                            <div class="input-group date">
+                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+                                {{ form_widget(form.news_date) }}
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label for="repeatPassword">video </label>
+                            {{ form_widget(form.news_video) }}
+                        </div>
+                        <div class="form-group">
+                            <label for="repeatPassword">_featured </label>
+                            {{ form_widget(form._featured) }}
+                        </div>
+                        <div class="form-group">
+                            <label for="repeatPassword">_published </label>
+                            {{ form_widget(form._published) }}
+                        </div>
+                        <div class="form-group">
+                            <label for="repeatPassword">_isdeleted </label>
+                            {{ form_widget(form._isdeleted) }}
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-plus-square-o"></i> Add</button>
+                        </div>
+                        <br>
+                        <br>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script src="{{ asset('src/js/summernote/summernote.min.js') }}"></script>
+    <script src="{{ asset('src/js/datapicker/bootstrap-datepicker.js') }}"></script>
+
+    <script>
+        $(document).ready(function(){
+
+            $('.summernote').summernote();
+
+        });
+        $('#data_1 .input-group.date').datepicker({
+            todayBtn: "linked",
+            keyboardNavigation: false,
+            forceParse: false,
+            calendarWeeks: true,
+            autoclose: true
+        });
+    </script>
+
+{% endblock %}
+
