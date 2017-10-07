@@ -22,16 +22,18 @@ class Flashnews
     private $flashnewsId;
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="flashnews_category", type="string", length=255, nullable=true)
+     * @ORM\ManyToOne(targetEntity="FootBundle\Entity\Category", inversedBy="categoryId")
+     * @ORM\JoinColumn(name="flashnews_category", referencedColumnName="category_id")
      */
     private $flashnewsCategory;
 
     /**
-     * @var integer
      *
-     * @ORM\Column(name="news_id", type="integer", nullable=true)
+     * @ORM\ManyToOne(targetEntity="FootBundle\Entity\News", inversedBy="news_id")
+     * @ORM\JoinColumn(name="news_id", referencedColumnName="news_id")
+     *
      */
     private $newsId;
 
@@ -78,7 +80,7 @@ class Flashnews
     /**
      * Get flashnewsCategory
      *
-     * @return string
+     * @return integer
      */
     public function getFlashnewsCategory()
     {

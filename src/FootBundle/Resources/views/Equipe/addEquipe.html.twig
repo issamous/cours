@@ -7,34 +7,34 @@
 {% endblock %}
 
  {% block actionArea %}
-     <a href="{{ path('foot_list_news') }}" class="btn btn-primary"><i class="fa fa-list-ul"></i> News list</a>
+     <a href="{{ path('foot_list_equipe') }}" class="btn btn-primary"><i class="fa fa-list-ul"></i> Equipe list</a>
  {% endblock %}
 {% block titleContaint %}
-    <h2>Add news</h2>
+    <h2>Add Equipe</h2>
 {% endblock %}
 
 {% block breadcrumb %}
     <ol class="breadcrumb">
         <li>
-            <a>News</a>
+            <a>Equipe</a>
         </li>
         <li class="active">
-            <strong>Edit news</strong>
+            <strong>Add Equipe</strong>
         </li>
     </ol>
 {% endblock %}
-{% block newActive %}class="active"{% endblock %}
-{% block NewsAddctive %}{% endblock %}
+{% block EquipeActive %}class="active"{% endblock %}
+{% block EquipeAddctive %}class="active"{% endblock %}
 {% block Containt %}
     <div class="row">
         <div class="col-lg-12">
             <div class="ibox">
                 <div class="ibox-title">
-                    <h5>news</h5>
+                    <h5>Equipe</h5>
                 </div>
                 <div class="ibox-content">
 
-                    <form method="post" action="{{ path('foot_edit_news', {'id': id}) }}" enctype="multipart/form-data">
+                    <form method="post" action="{{ path('foot_add_equipe') }}" enctype="multipart/form-data">
                         {{ form_row(form._token) }}
                         {% if not form.vars.valid %}
                             <div class="alert alert-danger">
@@ -48,48 +48,22 @@
                                 </div>
                             {% endfor %}
                         {% endif %}
-                        <div class="form-group">
-                            <label for="exampleInputPassword1">Category </label>
-                            {{ form_widget(form.category_id) }}
-                        </div>
+
+
                         <div class="form-group">
                             <label>Title</label>
-                            {{ form_widget(form.news_title) }}
+                            {{ form_widget(form.equipe_nom) }}
                         </div>
                         <div class="form-group">
                             <label>Content</label>
-                            {{ form_widget(form.news_content) }}
+                            {{ form_widget(form.equipe_sug) }}
                         </div>
                         <div class="form-group">
                             <label for="exampleInputEmail1">Image </label>
-                            {{ form_widget(form.news_image_file) }}
+                            {{ form_widget(form.equipe_image_file) }}
                         </div>
 
-                        <div class="form-group" id="data_1">
-                            <label for="font-normal">news_date </label>
-                            <div class="input-group date">
-                            <span class="input-group-addon"><i class="fa fa-calendar"></i></span>
-                                {{ form_widget(form.news_date) }}
-                            </div>
 
-                        </div>
-
-                        <div class="form-group">
-                            <label for="repeatPassword">video </label>
-                            {{ form_widget(form.news_video) }}
-                        </div>
-                        <div class="form-group">
-                            <label for="repeatPassword">_featured </label>
-                            {{ form_widget(form._featured) }}
-                        </div>
-                        <div class="form-group">
-                            <label for="repeatPassword">_published </label>
-                            {{ form_widget(form._published) }}
-                        </div>
-                      <!--  <div class="form-group">
-                            <label for="repeatPassword">_isdeleted </label>
-                            {#{{ form_widget(form._isdeleted) }}#}
-                        </div>-->
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary pull-right"><i class="fa fa-plus-square-o"></i> Add</button>
                         </div>

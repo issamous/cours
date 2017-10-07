@@ -33,6 +33,13 @@ services:
         tags:
               - { name: twig.extension }
 
+    foot.twig_extension:
+        class: FootBundle\Twig\FootExtension
+        public: false
+        tags:
+            - { name: twig.extension }
+
+
     fos_user.resetting.reset.success:
         class: 'SettingsBundle\EventListener\ResettingListener'
         arguments: [ "@router", "@security.authorization_checker","@session" ]
@@ -50,3 +57,6 @@ services:
         resource: '../../src/SettingsBundle/*'
         # you can exclude directories or files
         # but if a service is unused, it's removed anyway
+
+
+

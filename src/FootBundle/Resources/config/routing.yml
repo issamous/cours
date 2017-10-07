@@ -11,8 +11,63 @@ foot_edit_news:
     path:     /news/edit/{id}
     defaults: { _controller: FootBundle:News:newsEdit }
 
+
 get_news_by_id_json:
     path:     /news/get/{id}
     defaults: { _controller: FootBundle:News:getById }
     options:
         expose: true
+
+foot_list_classement:
+    path:     /classement/list
+    defaults: { _controller: FootBundle:Classement:classementList }
+foot_add_classement:
+    path:     /classement/add
+    defaults: { _controller: FootBundle:Classement:classementAdd }
+foot_edit_classement:
+    path:     /classement/edit/{id}
+    defaults: { _controller: FootBundle:Classement:classementEdit }
+
+
+foot_list_equipe:
+    path:     /equipe/list
+    defaults: { _controller: FootBundle:Equipe:EquipeList }
+foot_add_equipe:
+    path:     /equipe/add
+    defaults: { _controller: FootBundle:Equipe:EquipeAdd }
+foot_edit_equipe:
+    path:     /equipe/edit/{id}
+    defaults: { _controller: FootBundle:Equipe:EquipeEdit }
+
+
+foot_list_video:
+    path:     /video/list
+    defaults: { _controller: FootBundle:Video:VideoList }
+foot_add_video:
+    path:     /video/add
+    defaults: { _controller: FootBundle:Video:VideoAdd }
+foot_edit_video:
+    path:     /video/edit/{id}
+    defaults: { _controller: FootBundle:Video:VideoEdit }
+
+
+foot_list_flashnews:
+    path:     /flashnews/list
+    defaults: { _controller: FootBundle:Flashnews:flashnewsList }
+foot_add_flashnews:
+    path:     /flashnews/add
+    defaults: { _controller: FootBundle:Flashnews:flashnewsAdd }
+foot_edit_flashnews:
+    path:     /flashnews/edit/{id}
+    defaults: { _controller: FootBundle:Flashnews:flashnewsEdit }
+
+
+foot_list_Matchhas:
+    path:     /matchhas/list
+    defaults: { _controller: FootBundle:Matchhas:matchhasList }
+foot_add_Matchhas:
+    path:     /matchhas/add
+    defaults: { _controller: FootBundle:Matchhas:matchhasAdd }
+foot_edit_Matchhas:
+    path:     /matchhas/edit/{id}
+    defaults: { _controller: FootBundle:Matchhas:matchhasEdit }

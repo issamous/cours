@@ -10,4 +10,6 @@ parameters:
     mailer_user: issamous@gmail.com
     mailer_password: null
     secret: ThisTokenIsNotSoSecretChangeIt
+    upload_equipe_directory: '%kernel.project_dir%/web/uploads/equipe'
     upload_news_directory: '%kernel.project_dir%/web/uploads/news'
+    upload_classement_directory: '%kernel.project_dir%/web/uploads/classement'

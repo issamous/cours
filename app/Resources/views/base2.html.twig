@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}FOS{% endblock %}</title>
+    <title>{% block title %}BACKOFFICE - {% endblock %}</title>
 
     <link rel="icon" type="image/x-icon" href="{{ asset('apple-touch-icon.png') }}" />
     <link href="{{ asset('src/css/plugins/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
@@ -14,8 +14,6 @@
     {% block stylesheets %}
     {% endblock %}
 </head>
-
-
 
 
 
@@ -34,7 +32,7 @@
                             </div>
                         </div>
                         <div class="logo-element">
-                            FOS
+                            Babckoffice - foot
                         </div>
                     </li>
                     <li {% block DashboardsActive %}{% endblock %}>
@@ -59,6 +57,46 @@
                         <ul class="nav nav-second-level collapse">
                             <li {% block NewsListActive %}{% endblock %}><a href="{{ path('foot_list_news') }}">News list</a></li>
                             <li {% block NewsAddctive %}{% endblock %}><a href="{{ path('foot_add_news') }}">Add news</a></li>
+                        </ul>
+                    </li>
+
+                    <li {% block ClassementActive %}{% endblock %}>
+                        <a href="#"><i class="fa fa-hacker-news"></i> <span class="nav-label">Classement</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li {% block ClassementListActive %}{% endblock %}><a href="{{ path('foot_list_classement') }}">Classement list</a></li>
+                            <li {% block ClassementAddctive %}{% endblock %}><a href="{{ path('foot_add_classement') }}">Add Classement</a></li>
+                        </ul>
+                    </li>
+
+                    <li {% block EquipeActive %}{% endblock %}>
+                        <a href="#"><i class="fa fa-hacker-news"></i> <span class="nav-label">Equipe</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li {% block EquipeListActive %}{% endblock %}><a href="{{ path('foot_list_equipe') }}"> Equipe list</a></li>
+                            <li {% block EquipeAddctive %}{% endblock %}><a href="{{ path('foot_add_equipe') }}">Add Equipe</a></li>
+                        </ul>
+                    </li>
+
+                    <li {% block VideoActive %}{% endblock %}>
+                        <a href="#"><i class="fa fa-hacker-news"></i> <span class="nav-label">Video</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li {% block VideoListActive %}{% endblock %}><a href="{{ path('foot_list_video') }}"> Video list</a></li>
+                            <li {% block VideoAddctive %}{% endblock %}><a href="{{ path('foot_add_video') }}">Add Video</a></li>
+                        </ul>
+                    </li>
+
+                    <li {% block FlashnewsActive %}{% endblock %}>
+                        <a href="#"><i class="fa fa-hacker-news"></i> <span class="nav-label">Flash News</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li {% block FlashnewsListActive %}{% endblock %}><a href="{{ path('foot_list_flashnews') }}"> Flash News list</a></li>
+                            <li {% block FlashnewsAddctive %}{% endblock %}><a href="{{ path('foot_add_flashnews') }}">Add Flash News</a></li>
+                        </ul>
+                    </li>
+
+                    <li {% block MatchhasActive %}{% endblock %}>
+                        <a href="#"><i class="fa fa-hacker-news"></i> <span class="nav-label">Match</span><span class="fa arrow"></span></a>
+                        <ul class="nav nav-second-level collapse">
+                            <li {% block MatchhasListActive %}{% endblock %}><a href="{{ path('foot_list_Matchhas') }}"> Match list</a></li>
+                            <li {% block MatchhasAddctive %}{% endblock %}><a href="{{ path('foot_add_Matchhas') }}">Add Match</a></li>
                         </ul>
                     </li>
                 </ul>

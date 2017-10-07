@@ -23,7 +23,6 @@ class News
      */
     private $newsId;
 
-
     /**
      * @ORM\ManyToOne(targetEntity="FootBundle\Entity\Category", inversedBy="categoryId")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="category_id")

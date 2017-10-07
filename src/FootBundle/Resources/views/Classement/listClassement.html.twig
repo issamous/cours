@@ -3,24 +3,24 @@
     <link href="{{ asset('src/css/plugins/dataTables/datatables.min.css') }}" rel="stylesheet">
 {% endblock %}
 {% block actionArea %}
-    <a href="{{ path('foot_add_news') }}" class="btn btn-primary"><i class="fa fa-plus-square-o"></i> Add news</a>
+    <a href="{{ path('foot_add_classement') }}" class="btn btn-primary"><i class="fa fa-plus-square-o"></i> Add Classement</a>
 {% endblock %}
 {% block titleContaint %}
-    <h2>News list</h2>
+    <h2>Classement list</h2>
 {% endblock %}
 
 {% block breadcrumb %}
     <ol class="breadcrumb">
         <li>
-            <a>News</a>
+            <a>Classement</a>
         </li>
         <li class="active">
-            <strong>News list</strong>
+            <strong>Classement list</strong>
         </li>
     </ol>
 {% endblock %}
-{% block newActive %}class="active"{% endblock %}
-{% block NewsListActive %}class="active"{% endblock %}
+{% block ClassementActive %}class="active"{% endblock %}
+{% block ClassementListActive %}class="active"{% endblock %}
 
 {% block Containt %}
 
@@ -44,7 +44,7 @@
             {% endif %}
             <div class="ibox">
                 <div class="ibox-title">
-                    <h5>News</h5>
+                    <h5>Classement</h5>
                 </div>
                 <div class="ibox-content">
                     <div class="table-responsive">
@@ -52,26 +52,26 @@
                             <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Titre</th>
+                                <th>Equipe</th>
                                 <th>Image</th>
-                                <th>Video</th>
-                                <th>Categorie</th>
-                                <th>Vue</th>
+                                <th>Point</th>
+                                <th>Range</th>
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
 
-                            {% for u in news %}
+
+                            {% for u in classement %}
                                 <tr>
-                                    <td>{{ u.newsId }}</td>
-                                    <td>{{ u.newsTitle }}</td>
-                                    <td><img src="{{ asset('uploads/news/' ~ u.newsImageFile) }}" alt="{{ u.newsImageFile }}"></td>
-                                    <td>{{ u.newsVideo}}</td>
-                                    <td>{{ u.categoryId.categoryName }}</td>
-                                    <td>{{ u.newsVu }}</td>
+                                    <td>{{ u.classementId }}</td>
+                                    <td>{{ u.classementEquipe }}</td>
+                                    <td><img src="{{ asset('uploads/classement/' ~ u.classementImageFile) }}" alt="{{ u.classementImageFile }}"></td>
+                                    <td>{{ u.classementPoints}}</td>
+                                    <td>{{ u.classementRang }}</td>
+
                                     <td>
-                                        <a title="Edit user"  href="{{ path('foot_edit_news', {'id': u.newsId}) }}" >
+                                        <a title="Edit user"  href="{{ path('foot_edit_classement', {'id': u.classementId}) }}" >
                                           <span class="btn btn-xs btn-primary">
                                                 <i class="fa fa-edit text-primary"></i>
                                           </span>
@@ -100,7 +100,7 @@
     <script>
         $(document).ready(function(){
             $('.dataTables-example').DataTable({
-                "order": [[ 0, "desc" ]],
+                "order": [[ 4, "desc" ]],
                 pageLength: 10,
                 responsive: true,
                 dom: '<"html5buttons"B>lTfgitp',

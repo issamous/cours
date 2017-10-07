@@ -23,15 +23,15 @@ class MatchHas
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="equipe_1", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="FootBundle\Entity\Equipe", inversedBy="equipeId")
+     * @ORM\JoinColumn(name="equipe_1", referencedColumnName="equipe_id")
      */
     private $equipe1;
 
     /**
      * @var integer
-     *
-     * @ORM\Column(name="equipe_2", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="FootBundle\Entity\Equipe", inversedBy="equipeId")
+     * @ORM\JoinColumn(name="equipe_2", referencedColumnName="equipe_id")
      */
     private $equipe2;
 

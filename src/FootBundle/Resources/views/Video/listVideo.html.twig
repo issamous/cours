@@ -3,24 +3,24 @@
     <link href="{{ asset('src/css/plugins/dataTables/datatables.min.css') }}" rel="stylesheet">
 {% endblock %}
 {% block actionArea %}
-    <a href="{{ path('foot_add_news') }}" class="btn btn-primary"><i class="fa fa-plus-square-o"></i> Add news</a>
+    <a href="{{ path('foot_add_video') }}" class="btn btn-primary"><i class="fa fa-plus-square-o"></i> Add Video</a>
 {% endblock %}
 {% block titleContaint %}
-    <h2>News list</h2>
+    <h2>Video list</h2>
 {% endblock %}
 
 {% block breadcrumb %}
     <ol class="breadcrumb">
         <li>
-            <a>News</a>
+            <a>Video</a>
         </li>
         <li class="active">
-            <strong>News list</strong>
+            <strong>Video list</strong>
         </li>
     </ol>
 {% endblock %}
-{% block newActive %}class="active"{% endblock %}
-{% block NewsListActive %}class="active"{% endblock %}
+{% block VideoActive %}class="active"{% endblock %}
+{% block VideoListActive %}class="active"{% endblock %}
 
 {% block Containt %}
 
@@ -53,25 +53,24 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Titre</th>
-                                <th>Image</th>
-                                <th>Video</th>
-                                <th>Categorie</th>
-                                <th>Vue</th>
+                                <th>ID Video Youtube</th>
+                                <th>description</th>
+
                                 <th>Action</th>
                             </tr>
                             </thead>
                             <tbody>
 
-                            {% for u in news %}
+                            {% for u in video %}
                                 <tr>
-                                    <td>{{ u.newsId }}</td>
-                                    <td>{{ u.newsTitle }}</td>
-                                    <td><img src="{{ asset('uploads/news/' ~ u.newsImageFile) }}" alt="{{ u.newsImageFile }}"></td>
-                                    <td>{{ u.newsVideo}}</td>
-                                    <td>{{ u.categoryId.categoryName }}</td>
-                                    <td>{{ u.newsVu }}</td>
+                                    <td>{{ u.videoId }}</td>
+                                    <td>{{ u.videoTitle }}</td>
+
+                                    <td>{{ u.videoYoutube}}</td>
+                                    <td>{{ u.videoDesc }}</td>
+
                                     <td>
-                                        <a title="Edit user"  href="{{ path('foot_edit_news', {'id': u.newsId}) }}" >
+                                        <a title="Edit user"  href="{{ path('foot_edit_video', {'id': u.videoId}) }}" >
                                           <span class="btn btn-xs btn-primary">
                                                 <i class="fa fa-edit text-primary"></i>
                                           </span>
